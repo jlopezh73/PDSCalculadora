@@ -3,18 +3,20 @@
 @{
     ViewData["Title"] = "Operaciones algebráicas";            
 }
-<form method="get">
+<form method="post">
     <div class="mb-3">
-        <label for="op1" class="form-label">Operando 1:</label>
-        <input type="number" class="form-control" id="op1" asp-for="op1" placeholder="Escribir Operando 1">
+        <label for="op1" class="form-label" asp-for="datos.op1"></label>
+        <input type="number" class="form-control" id="op1" asp-for="datos.op1" placeholder="Escribir Operando 1">
+        <span asp-validation-for="datos.op1" class="text-danger"></span>
     </div>
     <div class="mb-3">
-        <label for="op2" class="form-label">Operando 2:</label>
-        <input type="number" class="form-control" id="op2" asp-for="op2" placeholder="Escribir Operando 2">
+        <label for="op2" class="form-label" asp-for="datos.op2"></label>
+        <input type="number" class="form-control" id="op2" asp-for="datos.op2" placeholder="Escribir Operando 2">
+        <span asp-validation-for="datos.op2" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label for="op2" class="form-label">Operación:</label>
-        <select class="form-control" id="opercion" asp-for="operacion">
+        <select class="form-control" id="opercion" asp-for="datos.operacion">
             <option value="1">Sumar</option>
             <option value="2">Restar</option>
             <option value="3">Multiplicar</option>
@@ -26,6 +28,7 @@
     </div>
     <div class="mb-3">
         <label for="op2" class="form-label">Resultado:</label>
-        <input type="text" class="form-control" id="resultado" disabled placeholder="Aquí aparecerá el resultado" value="@Model.resultado">
+        <input type="text" class="form-control" id="resultado" disabled 
+         placeholder="Aquí aparecerá el resultado" value="@Model.resultado">
     </div>
 </form>
